@@ -234,17 +234,29 @@ function setupSunEasterEgg() {
 // ================================
 
 function stopInitialAnimations() {
-    // Stop the pulsing sun animation
+    // Stop the floating sun core pulse animation
     const sunCore = document.querySelector('.sun-core');
     if (sunCore) {
-        sunCore.style.animation = 'none';
+        sunCore.style.setProperty('animation', 'none', 'important');
     }
 
-    // Stop all floating particle animations
+    // Stop the sun rays rotation
+    const sunRays = document.querySelector('.sun-rays');
+    if (sunRays) {
+        sunRays.style.setProperty('animation', 'none', 'important');
+    }
+
+    // Stop the hero pulse circles
+    const pulseCircles = document.querySelectorAll('.pulse-circle');
+    pulseCircles.forEach(circle => {
+        circle.style.setProperty('animation', 'none', 'important');
+    });
+
+    // Stop all floating particle animations and fade them out
     const particles = document.querySelectorAll('.floating-particle');
     particles.forEach(particle => {
-        particle.style.animation = 'none';
-        particle.style.opacity = '0';
+        particle.style.setProperty('animation', 'none', 'important');
+        particle.style.setProperty('opacity', '0', 'important');
     });
 }
 
