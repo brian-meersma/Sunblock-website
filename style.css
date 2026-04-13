@@ -275,19 +275,19 @@ body.night .sky-background {
 }
 
 .nav-link {
-    color: var(--text-primary);
+    color: white;
     text-decoration: none;
-    font-weight: 600;
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
+    font-weight: 700;
+    padding: 0.625rem 1.75rem;
+    border-radius: 25px;
+    background: linear-gradient(135deg, var(--orange), var(--yellow));
     transition: all 0.3s ease;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 16px rgba(255, 149, 0, 0.3);
 }
 
 .nav-link:hover {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 149, 0, 0.4);
 }
 
 /* ================================
