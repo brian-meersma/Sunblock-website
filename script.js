@@ -115,22 +115,37 @@ function setupParallax() {
 }
 
 // ================================
-// Progress Bar Animation
+// App Preview Animation
 // ================================
 
-function animateProgressBar() {
-    const progressFill = document.getElementById('progressFill');
+function setupAppPreviewAnimation() {
+    const appGrid = document.getElementById('appGrid');
+    const unlockScreen = document.getElementById('unlockScreen');
 
+    // Trigger animations when preview section comes into view
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                progressFill.style.animation = 'fillProgress 3s ease-in-out infinite';
+                // Reset and restart animations
+                appGrid.style.animation = 'none';
+                unlockScreen.style.animation = 'none';
+
+                // Force reflow
+                void appGrid.offsetWidth;
+                void unlockScreen.offsetWidth;
+
+                // Restart animations
+                appGrid.style.animation = 'fadeOutGrid 0.5s ease-out 2.5s forwards';
+                unlockScreen.style.animation = 'fadeInUnlock 0.5s ease-in 3s forwards';
+
+                // Unobserve after first trigger
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
 
-    if (progressFill) {
-        observer.observe(progressFill);
+    if (appGrid) {
+        observer.observe(appGrid);
     }
 }
 
@@ -271,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupInteractiveCards();
     setupSmoothScroll();
     setupParallax();
-    animateProgressBar();
+    setupAppPreviewAnimation();
     createFloatingParticles();
     setupSunEasterEgg();
 
