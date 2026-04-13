@@ -761,9 +761,8 @@ body.night .sky-background {
 .footer-legal {
     text-align: center;
     color: var(--text-secondary);
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     margin-top: 0.5rem;
-    opacity: 0.8;
 }
 
 /* ================================
