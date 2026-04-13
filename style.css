@@ -758,6 +758,14 @@ body.night .sky-background {
     font-size: 0.9rem;
 }
 
+.footer-legal {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
 /* ================================
    Responsive Design
    ================================ */
