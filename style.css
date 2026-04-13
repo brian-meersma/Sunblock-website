@@ -595,7 +595,11 @@ body.night .sky-background {
 }
 
 .app-grid {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -638,7 +642,11 @@ body.night .sky-background {
 }
 
 .app-preview-content {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 1;
     display: flex;
     flex-direction: column;
